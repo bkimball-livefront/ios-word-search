@@ -44,7 +44,12 @@ struct GameView: View {
                 }
             }
             .padding(.top, 12)
-            .padding(.bottom, 24)
+
+            Text("\(viewModel.foundWords.count) / \(puzzleWords.count) found")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .padding(.top, 4)
+                .padding(.bottom, 24)
 
             GeometryReader { geometry in
                 let cellSize = geometry.size.width / CGFloat(gridSize)
